@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>var test</title>
+</head>
+<body>
+<div id="demo"></div>
+<button>Click Me</button>
+<h2>Shin Phoo Winner</h2>
+
+<img src="images/126me.jpg" onclick="changeImage()">
+<div id="catchIdVal" name="spw"></div>
+
+<hr/>
+
+<h1>Test Personalized Welcome page</h1>
+<button id="changeUser">Change User</button>
+<h3 class="showMessage"></h3>
+<script type="text/javascript">
+	var myDegree="BE.IT";
+	console.log("education is=" + myDegree);
+
+	myDegree="Java Enginner By BJIT";
+	console.log("now education is=" + myDegree);
+
+	var testObj_Variable=document.querySelector('h1');
+	console.log("test querySelector var is=="+typeof(testObj_Variable));
+
+	document.getElementById("demo").innerHTML=myDegree;
+
+	//---------------
+	var myNumber=3;
+	myNumber===4;
+	console.log("myNumber test is::" + myNumber);
+
+	//---------------conditionals
+	var occupation="Developer";
+	if(occupation==="Developer"){
+		console.log("my occupation is:::" + occupation);
+	}
+	else{
+		console.log("I'm not doctor");
+	}
+	//----------------functions
+	function multyplyFun(n1,n2){
+		var result= n1*n2;
+		return result;
+	}
+	console.log(multyplyFun(99,2));
+
+	//----------------querySelector
+	document.querySelector('button').onclick=function(){
+		alert("Hit")
+	};
+
+	var myName=document.querySelector('h2');
+	console.log(myName);
+
+	//--------------Working With Image
+	var myImage=document.querySelector('img');
+	console.log("myImage type is==="+typeof(myImage));//object
+	console.log(myImage.getAttribute('src'));
+
+	// myImage.onclick=function changeImage(){
+	    function changeImage(){
+		var imgSources=myImage.getAttribute('src');
+		console.log(typeof("imgSources type is ==="+imgSources));//string
+
+		if(imgSources==="images/126me.jpg"){
+			myImage.setAttribute('src','images/25825.jpeg');
+		}else{
+			myImage.setAttribute('src','images/126me.jpg');
+		}
+	}
+
+	//-------------------mytest section
+	var myTest=document.getElementById("catchIdVal");//document.querySelector('div#catchIdVal');
+	console.log("myTest variable is"+myTest);
+	console.log("mytest name attribute value is="+myTest.getAttribute('name'));
+
+	//------------------creating personalized welcome message
+	// var userName=prompt("Please Enger your name!");
+	// document.write("Welcome"+userName);
+	// console.log("username from prompt="+userName);
+	var changeUser=document.querySelector('button#changeUser');
+	console.log("ccccccc"+changeUser);
+	var text=document.querySelector('h3');
+
+	changeUser.onclick = function setUser(){
+		var yourname=prompt("Please Enter Your Name");
+		localStorage.setItem('name',yourname);
+		text.innerHTML="Mozilla is Cool ::: "+yourname;
+		}
+
+		if (!localStorage.getItem('name')) {
+			setUser();
+		}else{
+			var storedname=localStorage.getItem('name');
+			text.innerHTML="Mozilla is Cool :::" + storedname;
+		}
+	
+</script>
+</body>
+</html>
+<!-- https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/Publishing_your_website -->

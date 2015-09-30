@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mozilla team's basic js</title>
+	<style type="text/css">
+	label{
+		display: block;
+	}
+	input[type="text"]{
+		margin-bottom: 1em;
+	}
+	#answer{
+		background: gold;
+	}
+	</style>
+</head>
+<body>
+<h1></h1>
+
+<!-- under line never work because querySelector call only h1 -->
+<div class="myHeading"></div>
+<hr/>
+<h3>Number Multiplication App</h3>
+<label>First Number</label>
+<input type="text" name="firstNo" id="firstNumber">
+
+<label>Second Name</label>
+<input type="text" name="secondNo" id="secondNumber">
+<br/>
+<button>CALCULATE</button>
+<div id="answer"></div>
+
+<script src="scripts/main.js"></script>
+<script src="scripts/multiplyfun.js"></script>
+</body>
+</html>
